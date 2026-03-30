@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-    
+
+<head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <body bgcolor="#e7e8dc" style="text-align: center;font-family: Outfit;">
+    <body bgcolor="#f6f4ea" style="text-align: center;font-family: Outfit;">
        
-    <h1 style="color:#313f85;font-size: xx-large;font-weight: bold;">My Video Editing Portfolio</h1>
+    <h1 style="color:#011f4b;font-size: xx-large;font-weight: bold;">My Video Editing Portfolio</h1>
     
         <p>Cleve Cagatin</p>
         <a href="https://www.youtube.com/@clevematthew2571/videos" target="_blank"> YouTube</a>
@@ -20,14 +23,33 @@
         <h2>School Work</h2>
 
         <h3>Change In Hue</h3>
-        <iframe width="560" height="315" 
+        <!--<iframe width="560" height="315" 
             src="https://www.youtube.com/embed/G0W-Ai4DEQY?si=bPq3nIpqNa5KFisW" 
             title="YouTube video player" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen>
-        </iframe>
+            </iframe>
+        -->
+        <div class="video">
+            <video id="preview_clip1" src="file_example_MP4_640_3MG.mp4" class="video_preview" muted loop autoplay>
+            </video>
+        </div>
+
+        <div id="cinema_overlay">
+            <div class="video_container">
+                <iframe width="100%" height="100%" 
+                src="https://www.youtube.com/embed/G0W-Ai4DEQY?si=bPq3nIpqNa5KFisW" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+            </div>
+        </div>
+           
 
         <h3>Video 2</h3>
         <h3>Video 3</h3>
@@ -35,4 +57,22 @@
         <h2>Personal Work</h2>
 
 
+    
+        <script>
+            const preview1 = document.getElementById("preview_clip1")
+            const cinema_bg = document.getElementById("cinema_overlay")
+            
+            function clickStatus(element) {
+                            element.classList.toggle("clicked")
+                        } 
+
+            preview1.addEventListener('click', () => clickStatus(cinema_bg))
+            
+            cinema_bg.addEventListener('click', () => clickStatus(cinema_bg))
+            
+            
+
+        </script>
+
     </body>
+    </html>

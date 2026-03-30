@@ -1,0 +1,58 @@
+.video_preview {
+  width: 40%; /* Or your desired width */
+  border-radius: 8px;
+  
+  /* This makes the animation smooth */
+  transition: transform 0.3s ease-in-out;
+  
+  /* Ensures the video stays crisp during the scale */
+  backface-visibility: hidden;
+}
+
+
+
+/* The trigger */
+.video_preview:hover {
+  /* Scales the video to 1.05x its size (5% larger) */
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+
+
+.video_container {
+  width: 80%;
+  aspect-ratio: 16 / 9;
+
+
+}
+
+/* Dark BG on video play */
+#cinema_overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%; height: 100%;
+  z-index: 100;
+  display: flex;
+  top: 0; left: 0;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+#cinema_overlay.clicked {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%; height: 100%;
+  z-index: 100;
+  display: flex;
+  top: 0; left: 0;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  pointer-events: auto;
+  transition: transform 0.3s ease-in-out;
+}
